@@ -1,6 +1,6 @@
 ﻿namespace WinFormsCefSharpSample
 {
-    partial class Form1
+    partial class FormBasic
     {
         /// <summary>
         /// 必要なデザイナー変数です。
