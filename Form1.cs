@@ -12,9 +12,9 @@ using CefSharp.WinForms;
 
 namespace WinFormsCefSharpSample
 {
-    public partial class FormBasic : Form
+    public partial class Form1 : Form
     {
-        public FormBasic()
+        public Form1()
         {
             InitializeComponent();
             InitializeChromium();
@@ -28,15 +28,8 @@ namespace WinFormsCefSharpSample
         public void InitializeChromium()
         {
             CefSettings settings = new CefSettings();
-            // CefのInitializeは一度だけ
-            if (!Cef.IsInitialized)
-            {
-                // Initialize cef with the provided settings
-                Cef.Initialize(settings);
-                // これを入れないと黒い余白が発生していまう。
-                Cef.EnableHighDPISupport();
-            }
-
+            // Initialize cef with the provided settings
+            Cef.Initialize(settings);
             // Create a browser component
             chromeBrowser = new ChromiumWebBrowser("https://takumi-oda.com/blog/");
             // Add it to the form and fill it to the form window.
