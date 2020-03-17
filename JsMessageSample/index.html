@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <button onclick="raisePopUp()">raisePopUp</button>
+    <button onclick="postingMessage()">PostMessage</button>
+</head>
+<body>    
+</body>
+<script>
+    let hellow = 'hello world';
+    let popupWindow = null;
+    console.log(hellow);
+    function raisePopUp() {
+        // 以下の例だと新しいタブでページが開かれる
+        //window.open("./popup.html","test");
+        
+        // こちらの例だと新しいwindowが開かれる。
+        popupWindow = window.open("./popup.html","test",'width=500,height=500');
+    }
+    function postingMessage(){
+        if(!popupWindow) return;
+        popupWindow.postMessage("hello!", "*");
+    }
+</script>
+</html>

@@ -1,15 +1,15 @@
 ﻿using System;
-using System;
 using System.Configuration;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
+using WinFormsCefSharpSample.JsMessageSample;
 
 namespace WinFormsCefSharpSample
 {
-    public partial class FormOpenDevTools : Form
+    public partial class JsMessageSampleForm : Form
     {
-        public FormOpenDevTools()
+        public JsMessageSampleForm()
         {
             InitializeComponent();
             InitializeChromium();
@@ -32,20 +32,20 @@ namespace WinFormsCefSharpSample
                 Cef.EnableHighDPISupport();
             }
 
-            // Create a browser component
-            chromeBrowser = new ChromiumWebBrowser("https://takumi-oda.com/blog/");
+            // JavaScriptの実験用htmlのパス(実際にデバッグする際はこちらでいけるはず)
+            // index.htmlとpopup.htmlをプロジェクトに含める。
+            // その上でビルド時にファイルコピーするためように出力ディレクトリにコピーというプロパティを常にコピーに変更する
+            var path = System.Environment.CurrentDirectory + @"\JsMessageSample\index.html";
+
+            chromeBrowser = new ChromiumWebBrowser(path);
             // Add it to the form and fill it to the form window.
             this.Controls.Add(chromeBrowser);
             chromeBrowser.Dock = DockStyle.Fill;
 
-
-
             // DeveloperToolを立ち上げる。Initializeが終わった後に呼ぶ必要があるのでイベントにアタッチ
-            bool parseRet = bool.TryParse(ConfigurationManager.AppSettings["isShowDevTool"], out bool isShowDevTool);
-            if (parseRet && isShowDevTool)
-            {
-                chromeBrowser.IsBrowserInitializedChanged += ChromeBrowserOnIsBrowserInitializedChanged;
-            }
+            chromeBrowser.IsBrowserInitializedChanged += ChromeBrowserOnIsBrowserInitializedChanged;
+
+            chromeBrowser.LifeSpanHandler = new LifespanHandler();
         }
 
         private void ChromeBrowserOnIsBrowserInitializedChanged(object sender, EventArgs e)

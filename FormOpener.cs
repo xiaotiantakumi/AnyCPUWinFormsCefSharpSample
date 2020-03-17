@@ -28,5 +28,11 @@ namespace WinFormsCefSharpSample
             var form = new FormOpenDevTools();
             form.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new JsMessageSampleForm();
+            form.Show();
+        }
     }
 }

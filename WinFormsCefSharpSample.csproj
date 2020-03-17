@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsMessageSample\JsMessageSampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JsMessageSample\JsMessageSampleForm.Designer.cs">
+      <DependentUpon>JsMessageSampleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOpenDevTools.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,7 @@
     <Compile Include="FormOpener.Designer.cs">
       <DependentUpon>FormOpener.cs</DependentUpon>
     </Compile>
+    <Compile Include="JsMessageSample\LifeSpanHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormOpener.resx">
@@ -132,6 +139,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JsMessageSample\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JsMessageSample\popup.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
