@@ -1,15 +1,24 @@
 ﻿using System;
-using System.Configuration;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
 
 namespace WinFormsCefSharpSample
 {
-    public partial class FormOpenDevTools : Form
+    public partial class PopupForm : Form
     {
-        public FormOpenDevTools()
+        private readonly string _url;
+
+        public PopupForm(string url)
         {
+            _url = url;
             InitializeComponent();
             InitializeChromium();
         }
@@ -32,25 +41,10 @@ namespace WinFormsCefSharpSample
             }
 
             // Create a browser component
-            chromeBrowser = new ChromiumWebBrowser("https://takumi-oda.com/blog/");
+            chromeBrowser = new ChromiumWebBrowser(this._url);
             // Add it to the form and fill it to the form window.
             this.Controls.Add(chromeBrowser);
             chromeBrowser.Dock = DockStyle.Fill;
-
-
-
-            // DeveloperToolを立ち上げる。Initializeが終わった後に呼ぶ必要があるのでイベントにアタッチ
-            bool parseRet = bool.TryParse(ConfigurationManager.AppSettings["isShowDevTool"], out bool isShowDevTool);
-            if (parseRet && isShowDevTool)
-            {
-                chromeBrowser.IsBrowserInitializedChanged += ChromeBrowserOnIsBrowserInitializedChanged;
-            }
-        }
-
-        private void ChromeBrowserOnIsBrowserInitializedChanged(object sender, EventArgs e)
-        {
-            var chromiumBrowser = sender as ChromiumWebBrowser;
-            chromiumBrowser?.ShowDevTools();
         }
     }
 }

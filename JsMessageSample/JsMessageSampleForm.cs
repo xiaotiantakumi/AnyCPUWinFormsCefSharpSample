@@ -45,7 +45,14 @@ namespace WinFormsCefSharpSample
             // DeveloperToolを立ち上げる。Initializeが終わった後に呼ぶ必要があるのでイベントにアタッチ
             chromeBrowser.IsBrowserInitializedChanged += ChromeBrowserOnIsBrowserInitializedChanged;
 
-            chromeBrowser.LifeSpanHandler = new LifespanHandler();
+            var lifespanHandler = new LifespanHandler();
+            lifespanHandler.raisePopupForm = str =>
+            {
+                // OnBeforePopupから呼び出される
+                var popupForm = new PopupForm(str);
+                popupForm.Show();
+            };
+            chromeBrowser.LifeSpanHandler = lifespanHandler;
         }
 
         private void ChromeBrowserOnIsBrowserInitializedChanged(object sender, EventArgs e)
