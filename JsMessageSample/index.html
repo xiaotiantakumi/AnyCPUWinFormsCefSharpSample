@@ -10,19 +10,13 @@
 <body>    
 </body>
 <script>
-    let hellow = 'hello world';
     let popupWindow = null;
-    console.log(hellow);
     function raisePopUp() {
-        // 以下の例だと新しいタブでページが開かれる
-        //window.open("./popup.html","test");
-        
         // こちらの例だと新しいwindowが開かれる。
         popupWindow = window.open("./popup.html","test",'width=500,height=500');
     }
-    function postingMessage(){
-        if(!popupWindow) return;
-        popupWindow.postMessage("hello!", "*");
-    }
+    window.addEventListener("unload", () => {
+        popupWindow.close();
+    });
 </script>
 </html>
