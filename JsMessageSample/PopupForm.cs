@@ -42,9 +42,19 @@ namespace WinFormsCefSharpSample
 
             // Create a browser component
             chromeBrowser = new ChromiumWebBrowser(this._url);
+
+            // DeveloperToolを立ち上げる。Initializeが終わった後に呼ぶ必要があるのでイベントにアタッチ
+            chromeBrowser.IsBrowserInitializedChanged += ChromeBrowserOnIsBrowserInitializedChanged;
+
             // Add it to the form and fill it to the form window.
             this.Controls.Add(chromeBrowser);
             chromeBrowser.Dock = DockStyle.Fill;
+        }
+
+        private void ChromeBrowserOnIsBrowserInitializedChanged(object sender, EventArgs e)
+        {
+            var chromiumBrowser = sender as ChromiumWebBrowser;
+            chromiumBrowser?.ShowDevTools();
         }
     }
 }
