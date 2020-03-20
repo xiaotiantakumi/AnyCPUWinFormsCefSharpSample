@@ -1,4 +1,4 @@
-﻿namespace WinFormsCefSharpSample
+﻿namespace WinFormsCefSharpSample.JsMessageSample
 {
     partial class PopupForm
     {

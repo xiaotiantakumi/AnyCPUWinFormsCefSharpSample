@@ -5,7 +5,7 @@ using CefSharp;
 using CefSharp.WinForms;
 using WinFormsCefSharpSample.JsMessageSample;
 
-namespace WinFormsCefSharpSample
+namespace WinFormsCefSharpSample.JsMessageSample
 {
     public partial class JsMessageSampleForm : Form
     {
