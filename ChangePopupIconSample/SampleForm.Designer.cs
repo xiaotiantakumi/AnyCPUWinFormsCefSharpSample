@@ -1,6 +1,6 @@
-﻿namespace ChangePopupIconSample.JsMessageSample
+﻿namespace WinFormsCefSharpSample.ChangePopupIconSample
 {
-    partial class JsMessageSampleForm
+    partial class SampleForm
     {
         /// <summary>
         /// 必要なデザイナー変数です。

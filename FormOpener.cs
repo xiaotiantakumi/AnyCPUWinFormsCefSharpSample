@@ -27,5 +27,11 @@ namespace WinFormsCefSharpSample
             var form = new JsMessageSample.JsMessageSampleForm();
             form.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var form = new ChangePopupIconSample.SampleForm();
+            form.Show();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ChangePopupIconSample.JsMessageSample
+﻿namespace WinFormsCefSharpSample.ChangePopupIconSample
 {
     partial class PopupForm
     {

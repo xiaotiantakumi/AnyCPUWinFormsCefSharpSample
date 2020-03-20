@@ -5,11 +5,11 @@ using CefSharp;
 using CefSharp.WinForms;
 using WinFormsCefSharpSample.JsMessageSample;
 
-namespace ChangePopupIconSample.JsMessageSample
+namespace WinFormsCefSharpSample.ChangePopupIconSample
 {
-    public partial class JsMessageSampleForm : Form
+    public partial class SampleForm : Form
     {
-        public JsMessageSampleForm()
+        public SampleForm()
         {
             InitializeComponent();
             InitializeChromium();

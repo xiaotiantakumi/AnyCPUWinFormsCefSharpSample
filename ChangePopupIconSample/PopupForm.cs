@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
 
-namespace ChangePopupIconSample.JsMessageSample
+namespace WinFormsCefSharpSample.ChangePopupIconSample
 {
     public partial class PopupForm : Form
     {
