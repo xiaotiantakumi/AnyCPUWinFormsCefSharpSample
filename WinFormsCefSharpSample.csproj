@@ -75,6 +75,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePopupIconSample\SampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePopupIconSample\SampleForm.Designer.cs">
+      <DependentUpon>SampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePopupIconSample\LifeSpanHandler.cs" />
+    <Compile Include="ChangePopupIconSample\PopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePopupIconSample\PopupForm.Designer.cs">
+      <DependentUpon>PopupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="JsMessageSample\PopupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +160,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChangePopupIconSample\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ChangePopupIconSample\myIcon.ico" />
+    <Content Include="ChangePopupIconSample\popup.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="JsMessageSample\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

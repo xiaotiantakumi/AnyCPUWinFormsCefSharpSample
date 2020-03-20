@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopUp</title>
+</head>
+
+<body>
+    <h1>PopupWindowだよ</h1>
+    <h2 id="receivedMessage"></h2>
+</body>
+<script>
+    window.addEventListener("message", receiveMessage, false);
+
+    function receiveMessage(event) {
+        debugger
+        document.getElementById("receivedMessage").innerText = event.data
+    }
+</script>
+
+</html>
