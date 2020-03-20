@@ -35,23 +35,14 @@ namespace WinFormsCefSharpSample.ChangePopupIconSample
             // JavaScriptの実験用htmlのパス(実際にデバッグする際はこちらでいけるはず)
             // index.htmlとpopup.htmlをプロジェクトに含める。
             // その上でビルド時にファイルコピーするためように出力ディレクトリにコピーというプロパティを常にコピーに変更する
-            var path = System.Environment.CurrentDirectory + @"\JsMessageSample\index.html";
+            var path = System.Environment.CurrentDirectory + @"\ChangePopupIconSample\index.html";
 
             chromeBrowser = new ChromiumWebBrowser(path);
             // Add it to the form and fill it to the form window.
             this.Controls.Add(chromeBrowser);
             chromeBrowser.Dock = DockStyle.Fill;
 
-            // DeveloperToolを立ち上げる。Initializeが終わった後に呼ぶ必要があるのでイベントにアタッチ
-            chromeBrowser.IsBrowserInitializedChanged += ChromeBrowserOnIsBrowserInitializedChanged;
-
             var lifespanHandler = new LifespanHandler();
-            lifespanHandler.raisePopupForm = str =>
-            {
-                // OnBeforePopupから呼び出される
-                var popupForm = new PopupForm(str);
-                popupForm.Show();
-            };
             chromeBrowser.LifeSpanHandler = lifespanHandler;
         }
 

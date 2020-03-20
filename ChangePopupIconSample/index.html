@@ -7,11 +7,11 @@
 </head>
 <body>
     <button onclick="raisePopUp()">raisePopUp</button>
-<button onclick="postingMessage()">PostMessage</button>
 <script>
     let popupWindow = null;
     function raisePopUp() {
         // こちらの例だと新しいwindowが開かれる。
+        // 大きさをこちらで変更しても、今回の例ではForm側で大きさを変更される
         popupWindow = window.open("./popup.html", "test", 'width=500,height=500');
     }
     window.addEventListener("unload", () => {

@@ -82,12 +82,6 @@
       <DependentUpon>SampleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangePopupIconSample\LifeSpanHandler.cs" />
-    <Compile Include="ChangePopupIconSample\PopupForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChangePopupIconSample\PopupForm.Designer.cs">
-      <DependentUpon>PopupForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="JsMessageSample\PopupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +115,9 @@
     <Compile Include="JsMessageSample\LifeSpanHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChangePopupIconSample\SampleForm.resx">
+      <DependentUpon>SampleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOpener.resx">
       <DependentUpon>FormOpener.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,7 +160,9 @@
     <Content Include="ChangePopupIconSample\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ChangePopupIconSample\myIcon.ico" />
+    <Content Include="ChangePopupIconSample\myIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ChangePopupIconSample\popup.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
