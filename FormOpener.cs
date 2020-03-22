@@ -33,5 +33,11 @@ namespace WinFormsCefSharpSample
             var form = new ChangePopupIconSample.SampleForm();
             form.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var form = new SampleTooltip.SampleForm();
+            form.Show();
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace WinFormsCefSharpSample.SampleTooltip
             // JavaScriptの実験用htmlのパス(実際にデバッグする際はこちらでいけるはず)
             // index.htmlとpopup.htmlをプロジェクトに含める。
             // その上でビルド時にファイルコピーするためように出力ディレクトリにコピーというプロパティを常にコピーに変更する
-            var path = System.Environment.CurrentDirectory + @"\JsMessageSample\index.html";
+            var path = System.Environment.CurrentDirectory + @"\SampleTooltip\index.html";
 
             chromeBrowser = new ChromiumWebBrowser(path);
             // Add it to the form and fill it to the form window.
