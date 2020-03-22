@@ -82,6 +82,26 @@
       <DependentUpon>SampleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangePopupIconSample\LifeSpanHandler.cs" />
+    <Compile Include="SampleTooltip\LifeSpanHandler.cs" />
+    <Compile Include="SampleTooltip\SampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleTooltip\SampleForm.Designer.cs">
+      <DependentUpon>SampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SampleBase\SampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleBase\SampleForm.Designer.cs">
+      <DependentUpon>SampleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SampleBase\LifeSpanHandler.cs" />
+    <Compile Include="SampleBase\PopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleBase\PopupForm.Designer.cs">
+      <DependentUpon>PopupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="JsMessageSample\PopupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +184,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ChangePopupIconSample\popup.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SampleTooltip\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SampleBase\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SampleBase\popup.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="JsMessageSample\index.html">

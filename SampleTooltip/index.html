@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="raisePopUp()">raisePopUp</button>
+<button onclick="postingMessage()">PostMessage</button>
+<script>
+    let popupWindow = null;
+    function raisePopUp() {
+        // こちらの例だと新しいwindowが開かれる。
+        popupWindow = window.open("./popup.html", "test", 'width=500,height=500');
+    }
+    window.addEventListener("unload", () => {
+        popupWindow.close();
+    });
+</script>
+</body>
+</html>
