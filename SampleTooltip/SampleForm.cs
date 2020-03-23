@@ -28,8 +28,6 @@ namespace WinFormsCefSharpSample.SampleTooltip
             {
                 // Initialize cef with the provided settings
                 Cef.Initialize(settings);
-                // これを入れないと黒い余白が発生していまう。
-                Cef.EnableHighDPISupport();
             }
 
             // JavaScriptの実験用htmlのパス(実際にデバッグする際はこちらでいけるはず)
